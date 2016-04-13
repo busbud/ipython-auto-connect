@@ -51,7 +51,7 @@ bq_connections = None
 def connect_bigquery(suffix='_bq', env_suffix='_BQ'):
     global bq_connections
     bq_configs = {
-        k[:-1 * len(env_suffix + '_EMAIL')]: {'email': v}
+        k[:-1 * len(env_suffix + '_EMAIL')]: v
         for k, v in os.environ.items()
         if k.endswith(env_suffix + '_EMAIL')
     }
